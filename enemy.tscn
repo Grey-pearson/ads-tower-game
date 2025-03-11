@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://d12y3tcyc7bdq"]
+
+[ext_resource type="PackedScene" uid="uid://biys1qed02h3l" path="res://scenes/health.tscn" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://b15vmw4y16dk8" path="res://assets/RetroWindowsGUI/Windows_Progress_Fill.png" id="1_qi2p4"]
+[ext_resource type="PackedScene" uid="uid://oo3ab1gpmx2w" path="res://scenes/hit_box.tscn" id="2_qi2p4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
+
+[node name="enemy" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qi2p4")
+
+[node name="Health" parent="." instance=ExtResource("1_4gyqm")]
+
+[node name="HitBox" parent="." instance=ExtResource("2_qi2p4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_iifgy")

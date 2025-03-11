@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="ad-blockr_tower_game"
+run/main_scene="uid://cfy8ojosyqn2q"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=368
+window/size/window_width_override=1400
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
+
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="player"
+2d_physics/layer_3="item"
+2d_physics/layer_4="player_hitbox"
+2d_physics/layer_5="player_hurtbox"
+2d_physics/layer_6="enemy_hitbox"
+2d_physics/layer_7="enemy_hurtbox"
+2d_physics/layer_8="soft_collision"
+2d_physics/layer_9="enemy"
+2d_physics/layer_10="land_edge"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

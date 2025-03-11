@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnevehuhuqyja"]
+
+[ext_resource type="Script" uid="uid://jsd42oontvqc" path="res://scripts/Health.gd" id="1_4ngb7"]
+[ext_resource type="Texture2D" uid="uid://21lj118rtyxt" path="res://assets/84applemac.png" id="1_jwnxg"]
+[ext_resource type="Script" uid="uid://d3tshd0vax3nm" path="res://scripts/HitBox.gd" id="2_qqdjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgtlw"]
+
+[node name="Tower" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("1_jwnxg")
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("1_4ngb7")
+
+[node name="HitBox" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+script = ExtResource("2_qqdjg")
+health_component = NodePath("../Health")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_kgtlw")
